@@ -12,10 +12,12 @@ Builder.prototype.plus = function (...addedData) {
 }
 
 function IntBuilder(int) {
-  this.data = int
+  Builder.call(this, int)
 }
 
 IntBuilder.prototype = Object.create(Builder.prototype)
+
+IntBuilder.prototype.constructor = IntBuilder
 
 IntBuilder.random = function (from, to) {
   return Math.floor(from + Math.random() * (to + 1 - from))
