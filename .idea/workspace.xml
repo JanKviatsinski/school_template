@@ -135,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614608836372</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="inh 6">
+      <created>1614609908920</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1614609908920</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +158,8 @@
     <MESSAGE value="inh 3" />
     <MESSAGE value="inh 4" />
     <MESSAGE value="inh 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="inh 5" />
+    <MESSAGE value="inh 6" />
+    <option name="LAST_COMMIT_MESSAGE" value="inh 6" />
   </component>
   <component name="WindowStateProjectService">
     <state x="542" y="292" key="#ESLint" timestamp="1614257479750">
@@ -162,18 +170,18 @@
       <screen x="0" y="0" width="1344" height="800" />
     </state>
     <state x="427" y="202" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1344.800/160.-768.1093.574@0.0.1344.800" timestamp="1614104214243" />
-    <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1614608829722">
+    <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1614609906456">
       <screen x="0" y="0" width="1344" height="800" />
     </state>
-    <state x="297" y="0" key="CommitChangelistDialog2/0.0.1344.800/160.-768.1093.574@0.0.1344.800" timestamp="1614608829722" />
+    <state x="297" y="0" key="CommitChangelistDialog2/0.0.1344.800/160.-768.1093.574@0.0.1344.800" timestamp="1614609906456" />
     <state x="453" y="155" key="FileChooserDialogImpl" timestamp="1614262337693">
       <screen x="0" y="0" width="1344" height="800" />
     </state>
     <state x="453" y="155" key="FileChooserDialogImpl/0.0.1344.800/160.-768.1093.574@0.0.1344.800" timestamp="1614262337693" />
-    <state x="265" y="133" key="Vcs.Push.Dialog.v2" timestamp="1614608845113">
+    <state x="265" y="133" key="Vcs.Push.Dialog.v2" timestamp="1614609913316">
       <screen x="0" y="0" width="1344" height="800" />
     </state>
-    <state x="265" y="133" key="Vcs.Push.Dialog.v2/0.0.1344.800/160.-768.1093.574@0.0.1344.800" timestamp="1614608845113" />
+    <state x="265" y="133" key="Vcs.Push.Dialog.v2/0.0.1344.800/160.-768.1093.574@0.0.1344.800" timestamp="1614609913316" />
     <state x="490" y="314" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1613738738347">
       <screen x="0" y="0" width="1344" height="800" />
     </state>
