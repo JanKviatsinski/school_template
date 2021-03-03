@@ -37,7 +37,7 @@ async function showWeather() {
     }
 
     if (dataWeather.location.name !== city) {
-      alert('Не удалось найти такого населенного пункта.')
+      alert('Не удалось найти такого населенного пункта')
       return
     }
 
