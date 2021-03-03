@@ -63,7 +63,7 @@ async function showWeather() {
 
     weather.style.display = 'flex'
   } catch (e) {
-    alert('e')
+    alert(e)
     console.error(e)
   }
 }
