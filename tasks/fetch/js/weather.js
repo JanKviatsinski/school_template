@@ -16,56 +16,33 @@ let country = formLocation.querySelector('#form-location__country').value
 let city = formLocation.querySelector('#form-location__city').value
 
 async function showWeather() {
-  try {
-    const responseGetWeather = await getWeather(city, country)
-    const dataWeather = await responseGetWeather.json()
-    console.log(dataWeather, new Date().getMinutes())
+  const dataWeather = await getWeather(city, country)
 
-    if (dataWeather?.error?.code === 105) {
-      alert('Превышено количество запросов, попробуйте еще раз через минуту.')
-      return
-    }
-
-    if (dataWeather?.error?.code > 600) {
-      alert('Не удалось найти такого населенного пункта.')
-      return
-    }
-
-    if (dataWeather?.error) {
-      alert('Упс, что-то пошло не так.')
-      return
-    }
-
-    if (dataWeather.location.name !== city) {
-      alert('Не удалось найти такого населенного пункта')
-      return
-    }
-
-    const location = `${dataWeather.location.name}, ${dataWeather.location.country}`
-    const { temperature, pressure } = dataWeather.current
-    const windDir = dataWeather.current.wind_dir
-    const windSpeed = dataWeather.current.wind_speed
-    const feelsLikeWeather = dataWeather.current.feelslike
-    const skyDescriptions = dataWeather.current.weather_descriptions
-      .reduce((acc, current) => `${acc} ${current}`)
-    const imgPath = dataWeather.current.weather_icons[0]
-    const time = dataWeather.location.localtime.slice(-5)
-
-    weatherParagraph.textContent = `The weather today in ${location}`
-    weatherImg.src = imgPath
-    tableTemperature.textContent = `${temperature} \u00b0C`
-    tableTime.textContent = `${time}`
-    tableWindDir.textContent = `${windDir}`
-    tableWindSpeed.textContent = `${windSpeed} km/h`
-    tableFeelsLikeWeather.textContent = `${feelsLikeWeather} \u00b0C`
-    tableSkyDescriptions.textContent = `${skyDescriptions}`
-    tablePressure.textContent = `${pressure} MB`
-
-    weather.style.display = 'flex'
-  } catch (e) {
-    alert(e)
-    console.error(e)
+  if (!dataWeather) {
+    return
   }
+
+  const location = `${dataWeather.location.name}, ${dataWeather.location.country}`
+  const { temperature, pressure } = dataWeather.current
+  const windDir = dataWeather.current.wind_dir
+  const windSpeed = dataWeather.current.wind_speed
+  const feelsLikeWeather = dataWeather.current.feelslike
+  const skyDescriptions = dataWeather.current.weather_descriptions
+    .reduce((acc, current) => `${acc} ${current}`)
+  const imgPath = dataWeather.current.weather_icons[0]
+  const time = dataWeather.location.localtime.slice(-5)
+
+  weatherParagraph.textContent = `The weather today in ${location}`
+  weatherImg.src = imgPath
+  tableTemperature.textContent = `${temperature} \u00b0C`
+  tableTime.textContent = `${time}`
+  tableWindDir.textContent = `${windDir}`
+  tableWindSpeed.textContent = `${windSpeed} km/h`
+  tableFeelsLikeWeather.textContent = `${feelsLikeWeather} \u00b0C`
+  tableSkyDescriptions.textContent = `${skyDescriptions}`
+  tablePressure.textContent = `${pressure} MB`
+
+  weather.style.display = 'flex'
 }
 
 formLocation.addEventListener('submit', (evt) => {
