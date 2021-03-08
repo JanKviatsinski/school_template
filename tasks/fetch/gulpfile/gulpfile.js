@@ -30,17 +30,17 @@ function clean() {
 }
 
 function copyHTML() {
-  return src('tasks/dataBase/index.html')
+  return src('tasks/fetch/index.html')
     .pipe(dest('build'))
 }
 
 function copyJS() {
-  return src('tasks/dataBase/js/*.js')
+  return src('tasks/fetch/js/*.js')
     .pipe(dest('build/js'))
 }
 
 function transformSCSS() {
-  return src('tasks/dataBase/style/**/index.scss')
+  return src('tasks/fetch/style/**/index.scss')
     .pipe(sass()
       .on('error', sass.logError))
     .pipe(cleanCSS())
@@ -49,15 +49,15 @@ function transformSCSS() {
 }
 
 function imagemin() {
-  return src('tasks/dataBase/img/*')
+  return src('tasks/fetch/img/*')
     .pipe(imageminImg())
     .pipe(dest('build/img'))
 }
 
 function watchTasks() {
-  watch('tasks/dataBase/js/*.js', copyJS)
-  watch('tasks/dataBase/index.html', copyHTML)
-  watch('tasks/dataBase/style/**/*.scss', transformSCSS)
+  watch('tasks/fetch/js/*.js', copyJS)
+  watch('tasks/fetch/index.html', copyHTML)
+  watch('tasks/fetch/style/**/*.scss', transformSCSS)
 }
 
 exports.clean = clean
