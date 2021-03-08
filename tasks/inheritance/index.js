@@ -7,102 +7,83 @@ Builder.prototype.get = function () {
 }
 
 Builder.prototype.plus = function (...addedData) {
-  this.data = addedData.reduce((acc, current) => acc + current, this.data)
-  return this
+  const initialData = this.data
+
+  return addedData.reduce((acc, current) => acc + current, initialData)
 }
 
 function IntBuilder(int) {
   this.data = int
 }
 
-IntBuilder.prototype = Object.create(Builder.prototype)
-
 IntBuilder.random = function (from, to) {
-  return Math.floor(from + Math.random() * (to + 1 - from))
+  const rand = from + Math.random() * (to + 1 - from)
+
+  return Math.floor(rand)
 }
 
-IntBuilder.prototype.minus = function (...values) {
-  this.data -= values.reduce((acc, current) => acc + current)
+IntBuilder.prototype = Object.create(Builder.prototype)
 
-  return this
+IntBuilder.prototype.minus = function (...values) {
+  const subtractedValue = values.reduce((acc, current) => acc + current)
+
+  return this.data - subtractedValue
 }
 
 IntBuilder.prototype.multiply = function (value) {
-  this.data *= value
-
-  return this
+  return this.data * value
 }
 
 IntBuilder.prototype.divide = function (value) {
-  this.data = Math.trunc(this.data / value)
-
-  return this
+  return Math.trunc(this.data / value)
 }
 
 IntBuilder.prototype.mod = function (value) {
-  this.data %= value
-
-  return this
+  return value % this.data
 }
 
 const intBuilder = new IntBuilder(10)
 
-console.log(IntBuilder.random(5, 10))
+console.log(intBuilder.plus(2))
 
-console.log(intBuilder
-  .plus(2, 3, 2)
-  .minus(1, 2)
-  .multiply(2)
-  .divide(4)
-  .mod(3)
-  .get())
+// console.log(intBuilder.plus(2).minus(2)) /* error */
 
 class StringBuilder extends Builder {
-  minus(value) {
-    this.data = this.data.slice(0, this.data.length - value)
+  constructor(str) {
+    super(str)
+    this.str = str
+  }
 
-    return this
+  minus(value) {
+    return this.str.slice(0, this.str.length - value)
   }
 
   multiply(value) {
-    this.data = this.data.repeat(value)
-
-    return this
+    return this.str.repeat(value)
   }
 
   divide(value) {
-    const k = Math.floor(this.data.length / value)
-    this.data = this.data.slice(0, this.data.length - k)
-
-    return this
+    const k = Math.floor(this.str.length / value)
+    return this.str.slice(0, this.str.length - k)
   }
 
   remove(value) {
-    this.data = [...this.data].reduce((acc, current) => {
+    return [...this.str].reduce((acc, current) => {
       let newStr = acc
       if (current !== value) {
         newStr += current
       }
       return newStr
     }, '')
-
-    return this
   }
 
   sub(from, substringLength) {
-    this.data = this.data.substring(from, from + substringLength)
-
-    return this
+    return this.str.substring(from, from + substringLength)
   }
 }
 
 const strBuilder = new StringBuilder('Hello')
 
-console.log(strBuilder
-  .plus(' all', '!')
-  .minus(4)
-  .multiply(3)
-  .divide(4)
-  .remove('l')
-  .sub(1, 1)
-  .get())
+console.log(strBuilder.remove('l'))
+// console.log(strBuilder.minus(2)
+//   .plus(' x')) /* error */
