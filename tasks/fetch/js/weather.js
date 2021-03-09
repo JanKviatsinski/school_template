@@ -16,9 +16,9 @@ let country = formLocation.querySelector('#form-location__country').value
 let city = formLocation.querySelector('#form-location__city').value
 
 async function showWeather() {
-  const dataWeather = await getWeather(city, country)
+  const { dataWeather, error } = await getWeather(city, country)
 
-  if (!dataWeather) {
+  if (error) {
     return
   }
 
