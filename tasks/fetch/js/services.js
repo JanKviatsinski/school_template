@@ -8,28 +8,24 @@ export async function getWeather(city, country) {
     const dataWeather = await responseGetWeather.json()
 
     if (dataWeather?.error?.code === 105) {
-      alert('Превышено количество запросов, попробуйте еще раз через минуту.')
-      return undefined
+      throw new Error('Превышено количество запросов, попробуйте еще раз через минуту.')
     }
 
     if (dataWeather?.error?.code > 600) {
-      alert('Не удалось найти такого населенного пункта.')
-      return undefined
+      throw new Error('Не удалось найти такого населенного пункта.')
     }
 
     if (dataWeather?.error) {
-      alert('Упс, что-то пошло не так.')
-      return undefined
+      throw new Error('Упс, что-то пошло не так.')
     }
 
     if (dataWeather.location.name !== city) {
-      alert('Не удалось найти такого населенного пункта.')
-      return undefined
+      throw new Error('Не удалось найти такого населенного пункта.')
     }
-    return dataWeather
+    return { dataWeather, error: false }
   } catch (e) {
     alert(e)
     console.error(e)
-    return undefined
+    return { dataWeather: null, error: true }
   }
 }
