@@ -3880,6 +3880,11 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.3.tgz#07c05034a6c349fa06e24fa35aa76db4580ce4dd"
   integrity sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==
 
+klona@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/klona/-/klona-2.0.4.tgz#7bb1e3affb0cb8624547ef7e8f6708ea2e39dfc0"
+  integrity sha512-ZRbnvdg/NxqzC7L9Uyqzf4psi1OM4Cuc+sJAkQPjO6XkQIJTNbfK2Rsmbw8fx1p2mkZdp2FZYo2+LwXYY/uwIA==
+
 language-subtag-registry@~0.3.2:
   version "0.3.21"
   resolved "https://registry.yarnpkg.com/language-subtag-registry/-/language-subtag-registry-0.3.21.tgz#04ac218bea46f04cb039084602c6da9e788dd45a"
@@ -4368,6 +4373,11 @@ negotiator@0.6.2:
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.2.tgz#feacf7ccf525a77ae9634436a64883ffeca346fb"
   integrity sha512-hZXc7K2e+PgeI1eDBe/10Ard4ekbfrrqG8Ep+8Jmf4JID2bNg7NvCPOZN+kfF574pFQI7mum2AUqDidoKqcTOw==
+
+neo-async@^2.6.2:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
+  integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
 next-tick@~1.0.0:
   version "1.0.0"
@@ -5574,6 +5584,14 @@ sass-graph@2.2.5:
     lodash "^4.0.0"
     scss-tokenizer "^0.2.3"
     yargs "^13.3.2"
+
+sass-loader@^11.0.1:
+  version "11.0.1"
+  resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-11.0.1.tgz#8672f896593466573b904f47693e0695368e38c9"
+  integrity sha512-Vp1LcP4slTsTNLEiDkTcm8zGN/XYYrZz2BZybQbliWA8eXveqA/AxsEjllQTpJbg2MzCsx/qNO48sHdZtOaxTw==
+  dependencies:
+    klona "^2.0.4"
+    neo-async "^2.6.2"
 
 sax@~1.2.4:
   version "1.2.4"
