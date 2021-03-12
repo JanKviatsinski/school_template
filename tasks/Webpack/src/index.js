@@ -1,5 +1,6 @@
 import './style.css'
 import webpackImg from '../public/img/logo.png'
+import './df.scss'
 
 console.log('aaaaaa')
 const img = document.createElement('img')
